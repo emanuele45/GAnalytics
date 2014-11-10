@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE package-info SYSTEM "http://www.elkarte.net/site/package-info">
+<package-info xmlns="http://www.elkarte.net/site/package-info" xmlns:elk="http://www.elkarte.net/">
+	<license><![CDATA[
+/**
+ * Google Analytics tracking
+ *
+ * @author emanuele
+ * @license   BSD http://opensource.org/licenses/BSD-3-Clause
+ *
+ * @version 0.0.1
+ */
+	]]></license>
+	<id>emanuele:ga_tracking</id>
+	<name>Google Analytics tracking</name>
+	<version>0.0.1</version>
+	<type>modification</type>
+	<install for="1.0 - 1.0.99">
+		<require-file name="GAnalytics.integrate.php" destination="SOURCEDIR" />
+		<require-file name="GAnalytics.english.php" destination="LANGUAGEDIR/english" />
+		<hook hook="integrate_load_theme" file="SOURCEDIR/GAnalytics.integrate.php" function="GAnalytics_Integrate::load_theme" />
+		<hook hook="integrate_general_mod_settings" file="SOURCEDIR/GAnalytics.integrate.php" function="GAnalytics_Integrate::general_mod_settings" />
+		<hook hook="integrate_save_general_mod_settings" file="SOURCEDIR/GAnalytics.integrate.php" function="GAnalytics_Integrate::save_general_mod_settings" />
+	</install>
+	<uninstall for="1.0 - 1.0.99">
+		<require-file name="SOURCEDIR/GAnalytics.integrate.php" />
+		<require-file name="LANGUAGEDIR/englishGAnalytics.english.php" />
+		<hook reverse="true" hook="integrate_load_theme" file="SOURCEDIR/GAnalytics.integrate.php" function="GAnalytics_Integrate::load_theme" />
+		<hook reverse="true" hook="integrate_general_mod_settings" file="SOURCEDIR/GAnalytics.integrate.php" function="GAnalytics_Integrate::general_mod_settings" />
+		<hook reverse="true" hook="integrate_save_general_mod_settings" file="SOURCEDIR/GAnalytics.integrate.php" function="GAnalytics_Integrate::save_general_mod_settings" />
+	</uninstall>
+</package-info>
