@@ -23,8 +23,8 @@
 		<hook hook="integrate_save_general_mod_settings" file="SOURCEDIR/GAnalytics.integrate.php" function="GAnalytics_Integrate::save_general_mod_settings" />
 	</install>
 	<uninstall for="1.0 - 1.0.99">
-		<require-file name="SOURCEDIR/GAnalytics.integrate.php" />
-		<require-file name="LANGUAGEDIR/englishGAnalytics.english.php" />
+		<remove-file name="SOURCEDIR/GAnalytics.integrate.php" />
+		<remove-file name="LANGUAGEDIR/english/GAnalytics.english.php" />
 		<hook reverse="true" hook="integrate_load_theme" file="SOURCEDIR/GAnalytics.integrate.php" function="GAnalytics_Integrate::load_theme" />
 		<hook reverse="true" hook="integrate_general_mod_settings" file="SOURCEDIR/GAnalytics.integrate.php" function="GAnalytics_Integrate::general_mod_settings" />
 		<hook reverse="true" hook="integrate_save_general_mod_settings" file="SOURCEDIR/GAnalytics.integrate.php" function="GAnalytics_Integrate::save_general_mod_settings" />
