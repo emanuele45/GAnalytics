@@ -8,21 +8,22 @@
  * @author emanuele
  * @license   BSD http://opensource.org/licenses/BSD-3-Clause
  *
- * @version 0.0.1
+ * @version 0.0.4
  */
 	]]></license>
 	<id>emanuele:ga_tracking</id>
 	<name>Google Analytics tracking</name>
-	<version>0.0.1</version>
+	<version>0.0.4</version>
 	<type>modification</type>
-	<install for="1.0 - 1.0.99">
+	<install for="1.0 - 1.1">
 		<require-file name="GAnalytics.integrate.php" destination="SOURCEDIR" />
 		<require-file name="GAnalytics.english.php" destination="LANGUAGEDIR/english" />
 		<hook hook="integrate_load_theme" file="SOURCEDIR/GAnalytics.integrate.php" function="GAnalytics_Integrate::load_theme" />
 		<hook hook="integrate_general_mod_settings" file="SOURCEDIR/GAnalytics.integrate.php" function="GAnalytics_Integrate::general_mod_settings" />
 		<hook hook="integrate_save_general_mod_settings" file="SOURCEDIR/GAnalytics.integrate.php" function="GAnalytics_Integrate::save_general_mod_settings" />
+		<redirect url="?action=admin;area=addonsettings;sa=general" timeout="5000"></redirect>
 	</install>
-	<uninstall for="1.0 - 1.0.99">
+	<uninstall for="1.0 - 1.1">
 		<remove-file name="SOURCEDIR/GAnalytics.integrate.php" />
 		<remove-file name="LANGUAGEDIR/english/GAnalytics.english.php" />
 		<hook reverse="true" hook="integrate_load_theme" file="SOURCEDIR/GAnalytics.integrate.php" function="GAnalytics_Integrate::load_theme" />
